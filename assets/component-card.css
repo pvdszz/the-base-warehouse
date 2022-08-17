@@ -72,7 +72,9 @@ body .trending .slick-prev.slick-arrow {
   line-height: 26px;
   text-transform: uppercase;
 }
-
+.essentials-section  .grid--4-col-desktop .multicolumn-list__item {
+  padding: 8.5px;
+}
 .card {
   text-align: var(--card-text-alignment);
   text-decoration: none;
