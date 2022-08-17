@@ -1,0 +1,33 @@
+.list-social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 749px) {
+  .list-social {
+    justify-content: center;
+  }
+}
+
+
+
+.the-bass-footer  .list-social {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 164px;
+    margin: 0 auto;
+}
+.the-bass-footer  li.list-social__item img {
+    max-width: 44px;
+}
+
+.list-social__link {
+  align-items: center;
+  display: flex;
+  color: rgb(var(--color-foreground));
+}
+
+.list-social__link:hover .icon {
+  transform: scale(1.07);
+}

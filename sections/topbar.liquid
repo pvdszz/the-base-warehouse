@@ -1,0 +1,21 @@
+<div class="announcement-bar d-flex justify-content-center align-items-center ">
+    <p>{{ section.settings.announcement_bar }}</p>
+</div>
+{% schema %}
+{
+    "name": "announcement-bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_bar",
+        "label": "Announcement Bar"
+      }
+    ],
+    "presets" : [
+      {
+        "category" : "Top bar",
+        "name" : "announcement"
+      }
+    ]
+}
+{% endschema %} 

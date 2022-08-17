@@ -1,0 +1,4 @@
+{%- if image != blank -%}
+    {% if image.width > 2100 %}{{ image | img_url: '2048x' }} 2100w {{ 2100 | divided_by: image.aspect_ratio | round }}h,{% endif %}
+    {{ image | img_url: 'master' }} {{ image.width }}w {{ image.height }}h
+{%- endif -%}

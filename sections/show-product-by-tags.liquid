@@ -1,0 +1,119 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+<div class="tags section-{{ section.id }} {{ section.settings.custom_class }} ">
+    <div class="tags__title title-wrapper title-wrapper--no-top-margin page-width">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank  -%}
+          <div class="tags__description ">{{ section.settings.description }}</div>
+        {%- endif -%}
+    </div>
+    <ul class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop" >
+    {% for product in collections.all.products %}   
+        {%- assign featured_image = product.featured_image -%}
+        {%- assign product_url = product.url -%}
+
+        {% if product.tags contains section.settings.tag_name %} 
+
+        <li class="grid__item">
+          <a href="{{ product_url }}" target="_blank">
+            <img src="{{ featured_image  |  product_img_url: 'large' }}"  alt=""> 
+          </a>
+        </li>
+
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Tags",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Tag",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h0",
+          "label": "h0"
+        }
+      ],
+      "default": "h1",
+      "label": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "tag_name",
+      "label": "Tags"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "adapt",
+      "label": "Square"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "show secondary image"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Colums desktop"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class" 
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "t:sections.page.presets.name"
+    }
+  ]
+}
+{% endschema %}

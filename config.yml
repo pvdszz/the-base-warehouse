@@ -1,0 +1,6 @@
+development:
+  password: shptka_a1db5a934c87ad4d85bcd7f4786c7a34
+  theme_id: "124997238818"
+  store: the-bass-ware-house.myshopify.com
+  ignore_files:
+  - /config/settings_data.json
