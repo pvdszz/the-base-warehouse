@@ -327,7 +327,7 @@
           "swipe_on_mobile": false,
           "padding_top": 16,
           "padding_bottom": 16,
-          "margin_top": 36,
+          "margin_top": 0,
           "margin_bottom": 36
         }
       },
@@ -861,8 +861,8 @@
     },
     "content_for_index": [
       "165951081398f463c1",
-      "1660028491b1965771",
       "1659511719e17f6666",
+      "1660028491b1965771",
       "165951210626df38c7",
       "16595129730ba63fe3",
       "16595142428d636462",
